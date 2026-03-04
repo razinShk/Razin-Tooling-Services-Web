@@ -3,6 +3,7 @@ import { Inter, Roboto_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const inter = Inter({
@@ -86,6 +87,7 @@ export default function RootLayout({
         <main className="flex-grow">{children}</main>
         <WhatsAppButton />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
