@@ -1,183 +1,314 @@
-import { Metadata } from 'next';
-import { Briefcase, Factory, FileSignature } from 'lucide-react';
-import Link from 'next/link';
+import { Metadata } from "next";
+import { Briefcase, FileSignature, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: 'Case Studies & Projects',
-    description: 'View our successful projects and case studies with Tata Motors Ltd and GE Stamp Ltd. High tension die proving and robust tool commissioning.',
+    title: "OEM Case Studies & Completed Projects",
+    description:
+        "Verified press tool installation, 350-tool buyoff, 210 mm draw proving, and DP-790 die proving projects for Tata Motors, Gestamp, Panse Group, and JBM Haridwar.",
 };
 
 export default function ProjectsPage() {
     return (
-        <div className="flex flex-col min-h-screen">
-            <section className="bg-slate-900 py-16 sm:py-24 text-white">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
-                    <h1 className="text-4xl sm:text-5xl font-bold mb-6">Major Projects Completed</h1>
-                    <p className="text-xl text-slate-300 leading-relaxed">
-                        A showcase of our precision execution for large-scale Indian OEMs, resolving complex tooling challenges under tight deadlines.
+        <div className="flex flex-col">
+            <section className="band--cast py-16 lg:py-20">
+                <div className="container space-y-4">
+                    <h1>OEM &amp; Tier-1 project dossier</h1>
+                    <p className="lead text-ink-2">
+                        Four major automotive tool commissioning, buyoff, and DP-790 proving contracts.
                     </p>
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl space-y-16">
+            <section className="py-20 lg:py-24">
+                <div className="container space-y-14">
+                    {/* Project 1: Tata Motors */}
+                    <article className="plate">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            <div className="lg:col-span-4 bg-paper-2 border-2 border-ink p-6 space-y-5">
+                                <div className="bg-plate border-2 border-ink p-4 flex items-center justify-center">
+                                    <img
+                                        src="/logos/tata-motors.svg"
+                                        alt="Tata Motors Ltd"
+                                        width={185}
+                                        height={40}
+                                        className="h-10 w-auto object-contain"
+                                    />
+                                </div>
+                                <div className="space-y-2 border-t-2 border-ink pt-4">
+                                    <h2>Tata Motors Ltd</h2>
+                                    <p className="font-bold text-ink">Project X104 (Tata Nexon)</p>
+                                    <p className="text-sm text-ink-2 flex items-center gap-2">
+                                        <MapPin size={16} aria-hidden="true" />
+                                        <span>Passenger Vehicle Division, Pune</span>
+                                    </p>
+                                </div>
+                                <dl className="grid grid-cols-2 gap-3 pt-2 border-t border-rule text-sm">
+                                    <div>
+                                        <dt className="text-ink-2">Total Volume</dt>
+                                        <dd className="figure-num font-bold text-lg text-ink">33 tools</dd>
+                                    </div>
+                                    <div>
+                                        <dt className="text-ink-2">Max Draw Proved</dt>
+                                        <dd className="figure-num font-bold text-lg text-ink">210&nbsp;mm</dd>
+                                    </div>
+                                </dl>
+                            </div>
 
-                    {/* Project 1 */}
-                    <div className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row">
-                        <div className="bg-blue-600 p-8 md:w-1/3 flex flex-col justify-center text-white relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHptMTIgMTJhNiA2IDAgMTAwLTEyIDYgNiAwIDAwMCAxMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPjwvc3ZnPg==')] mix-blend-overlay"></div>
-                            <Factory size={48} className="mb-6 relative z-10" />
-                            <h3 className="text-sm font-bold tracking-widest uppercase mb-2 relative z-10 text-blue-200">Automotive Sector</h3>
-                            <h2 className="text-3xl font-bold mb-2 relative z-10">Tata Motors Ltd</h2>
-                            <p className="text-blue-100 relative z-10">Project X104 (Nexon vehicle)</p>
-                        </div>
-                        <div className="p-8 md:p-12 md:w-2/3">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                <Briefcase className="text-blue-600" />
-                                Scope of Work
-                            </h3>
-                            <p className="text-slate-600 mb-6 leading-relaxed">
-                                We successfully commissioned and proved tools for the highly anticipated Tata Nexon project, ensuring that every panel met the strict cosmetic and structural integrity standards required for the passenger vehicle segment.
-                            </p>
-                            <div className="bg-slate-100 p-6 rounded-lg mb-6">
-                                <h4 className="font-bold text-slate-900 mb-4">Key Achievements:</h4>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Volume:</strong> 10 distinct parts requiring 33 specialized tools in total.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Complexity:</strong> Successfully achieved a critical draw proving with a massive 210mm depth without tearing or wrinkling.</span>
-                                    </li>
-                                </ul>
+                            <div className="lg:col-span-8 space-y-6">
+                                <div className="flex items-center gap-3 border-b-2 border-ink pb-4">
+                                    <Briefcase size={22} className="text-ink flex-shrink-0" aria-hidden="true" />
+                                    <h3>Scope of Work &amp; Commissioning</h3>
+                                </div>
+                                <p className="text-ink-2 leading-relaxed">
+                                    We commissioned and proved press tools for the Tata Nexon (X104) passenger vehicle program, ensuring every outer and inner panel met strict cosmetic and structural tolerances before full-scale production.
+                                </p>
+                                <div className="bg-paper-2 p-6 border-2 border-ink space-y-4">
+                                    <p className="font-bold text-ink">Verified Plant Deliverables</p>
+                                    <ul className="space-y-3 list-none p-0 m-0">
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Volume:</strong> 10 distinct sheet-metal parts requiring 33 specialized press tools in total.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Deep-Draw Proving:</strong> Cleared critical draw proving at a 210&nbsp;mm draw depth without tearing, splitting, or flange wrinkling.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    {/* Project 2 */}
-                    <div className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row-reverse">
-                        <div className="bg-slate-800 p-8 md:w-1/3 flex flex-col justify-center text-white relative overflow-hidden">
-                            <Factory size={48} className="mb-6 relative z-10 text-blue-400" />
-                            <h3 className="text-sm font-bold tracking-widest uppercase mb-2 relative z-10 text-slate-400">Component Manufacturing</h3>
-                            <h2 className="text-3xl font-bold mb-2 relative z-10">GE Stamp Ltd</h2>
-                            <p className="text-slate-300 relative z-10">Project MQB-Kushaq</p>
-                        </div>
-                        <div className="p-8 md:p-12 md:w-2/3">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                <Briefcase className="text-blue-600" />
-                                Scope of Work
-                            </h3>
-                            <p className="text-slate-600 mb-6 leading-relaxed">
-                                Appointed to prove tooling for the robust MQB platform, we delivered high-precision results for high-tensile materials, an application that requires exceptional tool durability and strict parameter control.
-                            </p>
-                            <div className="bg-slate-100 p-6 rounded-lg mb-6">
-                                <h4 className="font-bold text-slate-900 mb-4">Key Achievements:</h4>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Volume:</strong> 6 parts necessitating 33 complex tool sets.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Material Challenges:</strong> High tensile material (DP-790) handled flawlessly with thicknesses reaching up to 3.7mm.</span>
-                                    </li>
-                                </ul>
+                    {/* Project 2: GE Stamp Ltd */}
+                    <article className="plate">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            <div className="lg:col-span-4 bg-paper-2 border-2 border-ink p-6 space-y-5">
+                                <div className="grid grid-cols-1 gap-3">
+                                    <div className="bg-plate border-2 border-ink p-3 flex items-center justify-center">
+                                        <img
+                                            src="/logos/gestamp.svg"
+                                            alt="Gestamp (GE Stamp Ltd)"
+                                            width={175}
+                                            height={40}
+                                            loading="lazy"
+                                            className="h-9 w-auto object-contain"
+                                        />
+                                    </div>
+                                    <div className="bg-plate border-2 border-ink p-3 flex items-center justify-center">
+                                        <img
+                                            src="/logos/skoda-vw.svg"
+                                            alt="MQB-Kushaq Platform"
+                                            width={195}
+                                            height={40}
+                                            loading="lazy"
+                                            className="h-9 w-auto object-contain"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="space-y-2 border-t-2 border-ink pt-4">
+                                    <h2>GE Stamp Ltd</h2>
+                                    <p className="font-bold text-ink">Project MQB-Kushaq</p>
+                                    <p className="text-sm text-ink-2 flex items-center gap-2">
+                                        <MapPin size={16} aria-hidden="true" />
+                                        <span>Chakan Industrial Belt, Pune</span>
+                                    </p>
+                                </div>
+                                <dl className="grid grid-cols-2 gap-3 pt-2 border-t border-rule text-sm">
+                                    <div>
+                                        <dt className="text-ink-2">Tool Sets</dt>
+                                        <dd className="figure-num font-bold text-lg text-ink">33 tools (6 parts)</dd>
+                                    </div>
+                                    <div>
+                                        <dt className="text-ink-2">Steel Grade</dt>
+                                        <dd className="figure-num font-bold text-lg text-ink">DP-790 (3.7&nbsp;mm)</dd>
+                                    </div>
+                                </dl>
+                            </div>
+
+                            <div className="lg:col-span-8 space-y-6">
+                                <div className="flex items-center gap-3 border-b-2 border-ink pb-4">
+                                    <Briefcase size={22} className="text-ink flex-shrink-0" aria-hidden="true" />
+                                    <h3>Scope of Work &amp; High-Tensile Proving</h3>
+                                </div>
+                                <p className="text-ink-2 leading-relaxed">
+                                    Appointed to prove tooling for the MQB-Kushaq platform at GE Stamp Ltd, we delivered repeatable dimensional control on high-tensile structural stampings requiring heavy tonnage and springback compensation.
+                                </p>
+                                <div className="bg-paper-2 p-6 border-2 border-ink space-y-4">
+                                    <p className="font-bold text-ink">Verified Plant Deliverables</p>
+                                    <ul className="space-y-3 list-none p-0 m-0">
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Volume:</strong> 6 structural parts across 33 complex progressive and transfer tool sets.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Material Grade:</strong> High-tensile dual-phase steel (DP-790) proved at sheet thicknesses up to 3.7&nbsp;mm.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    {/* Project 3 */}
-                    <div className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row">
-                        <div className="bg-emerald-700 p-8 md:w-1/3 flex flex-col justify-center text-white relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDBWMHptMTIgMTJhNiA2IDAgMTAwLTEyIDYgNiAwIDAwMCAxMnoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPjwvc3ZnPg==')] mix-blend-overlay"></div>
-                            <Factory size={48} className="mb-6 relative z-10" />
-                            <h3 className="text-sm font-bold tracking-widest uppercase mb-2 relative z-10 text-emerald-200">Tools Buyoff & Commissioning</h3>
-                            <h2 className="text-3xl font-bold mb-2 relative z-10">Panse Group of Companies</h2>
-                            <p className="text-emerald-100 relative z-10">Tata Sierra Project</p>
-                        </div>
-                        <div className="p-8 md:p-12 md:w-2/3">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                <Briefcase className="text-blue-600" />
-                                Scope of Work
-                            </h3>
-                            <p className="text-slate-600 mb-6 leading-relaxed">
-                                Successfully completed tool buyoff for the Tata Sierra project, including comprehensive static and dynamic checking, as well as complete tool installation at Panse Autocomp in Sanand, Gujarat.
-                            </p>
-                            <div className="bg-slate-100 p-6 rounded-lg mb-6">
-                                <h4 className="font-bold text-slate-900 mb-4">Key Achievements:</h4>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Volume:</strong> Successfully completed tool buyoff for a total of 350 tools.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Implementation:</strong> Perfect execution of static and dynamic checking, followed by seamless local tool installation at the Sanand facility.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Part Proving:</strong> Successfully completed part proving for critical components including wheel arch inner, wheel arch outer, and cross member.</span>
-                                    </li>
-                                </ul>
+                    {/* Project 3: Panse Group of Companies */}
+                    <article className="plate">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            <div className="lg:col-span-4 bg-paper-2 border-2 border-ink p-6 space-y-5">
+                                <div className="bg-plate border-2 border-ink p-4 flex items-center justify-center">
+                                    <img
+                                        src="/logos/panse-group.svg"
+                                        alt="Panse Group of Companies"
+                                        width={190}
+                                        height={40}
+                                        loading="lazy"
+                                        className="h-10 w-auto object-contain"
+                                    />
+                                </div>
+                                <div className="space-y-2 border-t-2 border-ink pt-4">
+                                    <h2>Panse Group of Companies</h2>
+                                    <p className="font-bold text-ink">Tata Sierra Project</p>
+                                    <p className="text-sm text-ink-2 flex items-center gap-2">
+                                        <MapPin size={16} aria-hidden="true" />
+                                        <span>Panse Autocomp, Sanand, Gujarat</span>
+                                    </p>
+                                </div>
+                                <dl className="grid grid-cols-2 gap-3 pt-2 border-t border-rule text-sm">
+                                    <div>
+                                        <dt className="text-ink-2">Tools Signed Off</dt>
+                                        <dd className="figure-num font-bold text-lg text-ink">350 tools</dd>
+                                    </div>
+                                    <div>
+                                        <dt className="text-ink-2">Plant Site</dt>
+                                        <dd className="font-bold text-lg text-ink">Sanand, GJ</dd>
+                                    </div>
+                                </dl>
+                            </div>
+
+                            <div className="lg:col-span-8 space-y-6">
+                                <div className="flex items-center gap-3 border-b-2 border-ink pb-4">
+                                    <Briefcase size={22} className="text-ink flex-shrink-0" aria-hidden="true" />
+                                    <h3>Scope of Work &amp; 350-Tool Buyoff</h3>
+                                </div>
+                                <p className="text-ink-2 leading-relaxed">
+                                    Completed full tool buyoff for the Tata Sierra project, covering static and dynamic inspection alongside complete press-line installation at Panse Autocomp in Sanand, Gujarat.
+                                </p>
+                                <div className="bg-paper-2 p-6 border-2 border-ink space-y-4">
+                                    <p className="font-bold text-ink">Verified Plant Deliverables</p>
+                                    <ul className="space-y-3 list-none p-0 m-0">
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Volume:</strong> Completed tool buyoff across a total of 350 press tools.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Implementation:</strong> Static and dynamic checking followed by local tool installation at the Sanand facility.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-3 text-ink-2">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>
+                                                <strong className="text-ink">Part Proving:</strong> Proved critical body stampings including wheel arch inner, wheel arch outer, and cross member assemblies.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    {/* Project 4 */}
-                    <div className="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col md:flex-row-reverse">
-                        <div className="bg-violet-800 p-8 md:w-1/3 flex flex-col justify-center text-white relative overflow-hidden">
-                            <Factory size={48} className="mb-6 relative z-10 text-violet-300" />
-                            <h3 className="text-sm font-bold tracking-widest uppercase mb-2 relative z-10 text-violet-300">Tool Installation</h3>
-                            <h2 className="text-3xl font-bold mb-2 relative z-10">The True Tooling</h2>
-                            <p className="text-violet-100 relative z-10">Project P113</p>
-                        </div>
-                        <div className="p-8 md:p-12 md:w-2/3">
-                            <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                                <Briefcase className="text-blue-600" />
-                                Scope of Work
-                            </h3>
-                            <p className="text-slate-600 mb-6 leading-relaxed">
-                                Successfully completed the tool installation phase for the P113 project at the JBM manufacturing facility located in Haridwar, on behalf of our client The True Tooling.
-                            </p>
-                            <div className="bg-slate-100 p-6 rounded-lg mb-6">
-                                <h4 className="font-bold text-slate-900 mb-4">Key Achievements:</h4>
-                                <ul className="space-y-3">
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Location & Client:</strong> Successfully executed for The True Tooling at JBM Haridwar.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <span><strong>Implementation:</strong> Ensured complete, precision tool installation for Project P113.</span>
-                                    </li>
-                                    <li className="flex items-start gap-3 text-slate-700">
-                                        <FileSignature className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                                        <div className="flex flex-col">
-                                            <span><strong>Installed Parts & Tools:</strong> Major components installed include:</span>
-                                            <ul className="list-disc list-inside mt-2 text-sm text-slate-600 space-y-1">
-                                                <li>Panel Member Floor Front Inner (RH & Rear)</li>
-                                                <li>Cross Member Panel Rear Cab</li>
-                                                <li>Cross Member Grill Mounting</li>
-                                                <li>Panel Cross Member Front Upper & Upper Button</li>
-                                                <li>Panel Floor Front</li>
-                                                <li>Panel Fender Outer Extension (LH-RH)</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
+                    {/* Project 4: The True Tooling & JBM Haridwar */}
+                    <article className="plate">
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                            <div className="lg:col-span-4 bg-paper-2 border-2 border-ink p-6 space-y-5">
+                                <div className="grid grid-cols-1 gap-3">
+                                    <div className="bg-plate border-2 border-ink p-3 flex items-center justify-center">
+                                        <img
+                                            src="/logos/the-true-tooling.svg"
+                                            alt="The True Tooling"
+                                            width={200}
+                                            height={40}
+                                            loading="lazy"
+                                            className="h-9 w-auto object-contain"
+                                        />
+                                    </div>
+                                    <div className="bg-plate border-2 border-ink p-3 flex items-center justify-center">
+                                        <img
+                                            src="/logos/jbm-group.svg"
+                                            alt="JBM Group Haridwar"
+                                            width={175}
+                                            height={40}
+                                            loading="lazy"
+                                            className="h-9 w-auto object-contain"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="space-y-2 border-t-2 border-ink pt-4">
+                                    <h2>The True Tooling</h2>
+                                    <p className="font-bold text-ink">Project P113 (at JBM Haridwar)</p>
+                                    <p className="text-sm text-ink-2 flex items-center gap-2">
+                                        <MapPin size={16} aria-hidden="true" />
+                                        <span>JBM Manufacturing Plant, Haridwar</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="lg:col-span-8 space-y-6">
+                                <div className="flex items-center gap-3 border-b-2 border-ink pb-4">
+                                    <Briefcase size={22} className="text-ink flex-shrink-0" aria-hidden="true" />
+                                    <h3>Scope of Work &amp; Line Installation</h3>
+                                </div>
+                                <p className="text-ink-2 leading-relaxed">
+                                    Completed the press tool installation phase for Project P113 at the JBM manufacturing facility in Haridwar on behalf of our client, The True Tooling.
+                                </p>
+                                <div className="bg-paper-2 p-6 border-2 border-ink space-y-4">
+                                    <p className="font-bold text-ink">Installed Panel &amp; Cross-Member Tooling</p>
+                                    <ul className="space-y-2.5 list-none p-0 m-0 text-ink-2">
+                                        <li className="flex items-start gap-3">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>Panel Member Floor Front Inner (RH &amp; Rear)</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>Cross Member Panel Rear Cab &amp; Cross Member Grill Mounting</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>Panel Cross Member Front Upper &amp; Upper Button</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <FileSignature className="text-ink mt-1 flex-shrink-0" size={18} aria-hidden="true" />
+                                            <span>Panel Floor Front &amp; Panel Fender Outer Extension (LH/RH)</span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    </article>
                 </div>
             </section>
 
-            <section className="bg-slate-100 py-16 border-t border-slate-200">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6">Have a challenging project ahead?</h2>
-                    <Link href="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700 transition">
-                        Let's Discuss Solutions
+            <section className="band--cast py-16">
+                <div className="container flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                    <div>
+                        <h2>Have a critical tool launch or buyoff ahead?</h2>
+                        <p className="text-ink-2 mt-2">
+                            Send your tool list or part drawings directly to Asif N Shaikh for an immediate deployment plan.
+                        </p>
+                    </div>
+                    <Link href="/contact" className="btn btn--primary">
+                        Let’s Discuss Solutions
                     </Link>
                 </div>
             </section>

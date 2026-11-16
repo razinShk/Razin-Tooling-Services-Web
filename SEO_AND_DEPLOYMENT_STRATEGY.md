@@ -1,4 +1,4 @@
-# Razin Tooling Services - SEO & Deployment Strategy 🚀
+    # Razin Tooling Services - SEO & Deployment Strategy 🚀
 
 This document encapsulates the deployment pipeline and the 12-month SEO architecture required to dominate Indian industrial search rankings for Tooling Services, Die Proving, and Skilled Manpower.
 

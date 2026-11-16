@@ -1,0 +1,32 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "full",
+  "scope": "site",
+  "shape": "Bento Grid",
+  "theme": "formwork",
+  "axes": "mid/display-condensed/warm",
+  "hero": "Stage",
+  "nav": "edge-aligned",
+  "footer": "colophon block",
+  "imagery": "photographs, library 3, mono",
+  "photos": [
+   "Haltern am See, Sythen, Quarzwerke, Werkzeug in der Werkzeughalle -- 2014 -- 4059.jpg",
+   "Haltern am See, Sythen, Werkzeughalle der Quarzwerke -- 2015 -- 01117.jpg",
+   "Railway workshop museum exhibition in Ljubljana, Slovenia.jpg"
+  ],
+  "entry": "src/app/page.tsx",
+  "fingerprint": "bento-grid|stage|edge-aligned|colophon-block|table-plate-bento-band",
+  "sections": [
+   "Hero",
+   "Table",
+   "Band",
+   "Bento",
+   "Band"
+  ],
+  "signature": "OEM commissioning dossier plate with 416 tools proved across Tata Motors, Gestamp, Panse Group and JBM Haridwar",
+  "waived": [],
+  "prompt": "Industrial press tool installation, critical die proving and skilled manpower for Indian automotive OEMs",
+  "date": "2026-11-16"
+ }
+]

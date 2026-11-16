@@ -1,0 +1,21 @@
+{
+  "scanned": "2026-11-16",
+  "findings": {
+    "fonts": "Inter + Roboto Mono (next/font, src/app/layout.tsx L2)",
+    "palette": "Tailwind v4 @theme stock hexes (src/app/globals.css L3)",
+    "motion": "framer-motion 12 (package.json L13)",
+    "spacing": "Tailwind v4 default 4pt scale",
+    "framework": "Next.js 16 (app router)"
+  },
+  "preserve": [
+    "Next.js App Router routes and dynamic params",
+    "JSON-LD LocalBusiness schema and SEO metadata",
+    "All links, contact handlers, GSTIN and UDYAM registrations"
+  ],
+  "introduce": [
+    "Formwork cast industrial theme (Oswald, Archivo, Archivo Narrow)",
+    "Monochrome OEM and Tier-1 client logo ledger (Tata Motors, Gestamp, Panse Group, JBM Group, The True Tooling, Skoda/VW MQB)",
+    "Shareable Digital Capability Dossier & Visiting Card layout for Asif N Shaikh",
+    "Hallmark Floor and Reflex compliance"
+  ]
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512" role="img" aria-label="Razin Tooling Services Logo">
+  <title>Razin Tooling Services</title>
+  <defs>
+    <linearGradient id="gearGradTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dfe4ea"/>
+      <stop offset="55%" stop-color="#9aa4b0"/>
+      <stop offset="100%" stop-color="#cbd2da"/>
+    </linearGradient>
+    <linearGradient id="gearGradBot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9eb4cc"/>
+      <stop offset="50%" stop-color="#5a769a"/>
+      <stop offset="100%" stop-color="#879db8"/>
+    </linearGradient>
+    <mask id="topHalfMask">
+      <rect x="0" y="0" width="200" height="82" fill="white"/>
+      <circle cx="100" cy="100" r="46" fill="black"/>
+    </mask>
+    <mask id="botHalfMask">
+      <rect x="35" y="136" width="130" height="64" fill="white"/>
+      <circle cx="100" cy="100" r="46" fill="black"/>
+    </mask>
+    <clipPath id="topClip">
+      <rect x="0" y="0" width="200" height="82"/>
+    </clipPath>
+    <clipPath id="botClip">
+      <rect x="35" y="136" width="130" height="64"/>
+    </clipPath>
+  </defs>
+
+  <rect x="3" y="3" width="194" height="194" rx="28" fill="#f7f7f5" stroke="#22252c" stroke-width="5"/>
+
+  <!-- Top half of 10-tooth gear (5 teeth) -->
+  <g clip-path="url(#topClip)">
+    <path d="M 78.99 35.33 L 87.61 33.14 L 89.22 14.68 L 110.78 14.68 L 112.39 33.14 L 121.01 35.33 L 129.27 38.62 L 141.43 24.64 L 158.87 37.31 L 149.33 53.19 L 155.01 60.03 L 159.76 67.55 L 177.82 63.38 L 184.48 83.89 L 167.42 91.12 L 168.00 100.00 L 167.42 108.88 L 184.48 116.11 L 177.82 136.62 L 159.76 132.45 L 155.01 139.97 L 149.33 146.81 L 158.87 162.69 L 141.43 175.36 L 129.27 161.38 L 121.01 164.67 L 112.39 166.86 L 110.78 185.32 L 89.22 185.32 L 87.61 166.86 L 78.99 164.67 L 70.73 161.38 L 58.57 175.36 L 41.13 162.69 L 50.67 146.81 L 44.99 139.97 L 40.24 132.45 L 22.18 136.62 L 15.52 116.11 L 32.58 108.88 L 32.00 100.00 L 32.58 91.12 L 15.52 83.89 L 22.18 63.38 L 40.24 67.55 L 44.99 60.03 L 50.67 53.19 L 41.13 37.31 L 58.57 24.64 L 70.73 38.62 Z" fill="url(#gearGradTop)" stroke="#232730" stroke-width="3.5" stroke-linejoin="round" mask="url(#topHalfMask)"/>
+    <circle cx="100" cy="100" r="46" fill="none" stroke="#232730" stroke-width="3.5"/>
+    <line x1="33" y1="81" x2="56" y2="81" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="144" y1="81" x2="167" y2="81" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bottom half of 10-tooth gear (3 teeth) -->
+  <g clip-path="url(#botClip)">
+    <path d="M 78.99 35.33 L 87.61 33.14 L 89.22 14.68 L 110.78 14.68 L 112.39 33.14 L 121.01 35.33 L 129.27 38.62 L 141.43 24.64 L 158.87 37.31 L 149.33 53.19 L 155.01 60.03 L 159.76 67.55 L 177.82 63.38 L 184.48 83.89 L 167.42 91.12 L 168.00 100.00 L 167.42 108.88 L 184.48 116.11 L 177.82 136.62 L 159.76 132.45 L 155.01 139.97 L 149.33 146.81 L 158.87 162.69 L 141.43 175.36 L 129.27 161.38 L 121.01 164.67 L 112.39 166.86 L 110.78 185.32 L 89.22 185.32 L 87.61 166.86 L 78.99 164.67 L 70.73 161.38 L 58.57 175.36 L 41.13 162.69 L 50.67 146.81 L 44.99 139.97 L 40.24 132.45 L 22.18 136.62 L 15.52 116.11 L 32.58 108.88 L 32.00 100.00 L 32.58 91.12 L 15.52 83.89 L 22.18 63.38 L 40.24 67.55 L 44.99 60.03 L 50.67 53.19 L 41.13 37.31 L 58.57 24.64 L 70.73 38.62 Z" fill="url(#gearGradBot)" stroke="#232730" stroke-width="3.5" stroke-linejoin="round" mask="url(#botHalfMask)"/>
+    <circle cx="100" cy="100" r="46" fill="none" stroke="#232730" stroke-width="3.5"/>
+    <line x1="42" y1="137" x2="70" y2="137" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="130" y1="137" x2="158" y2="137" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Center Wordmark: RAZIN / TOOLING SERVICES -->
+  <text x="100" y="109" text-anchor="middle" fill="#232528" font-family="Arial Black, Impact, Helvetica, sans-serif" font-weight="900" font-size="29" textLength="168" lengthAdjust="spacingAndGlyphs">RAZIN</text>
+  <text x="100" y="127" text-anchor="middle" fill="#232528" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="12.5" letter-spacing="1.7">TOOLING SERVICES</text>
+</svg>

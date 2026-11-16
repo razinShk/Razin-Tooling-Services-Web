@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200">
+  <defs>
+    <linearGradient id="ogGearTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#dfe4ea"/>
+      <stop offset="55%" stop-color="#9aa4b0"/>
+      <stop offset="100%" stop-color="#cbd2da"/>
+    </linearGradient>
+    <linearGradient id="ogGearBot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9eb4cc"/>
+      <stop offset="50%" stop-color="#5a769a"/>
+      <stop offset="100%" stop-color="#879db8"/>
+    </linearGradient>
+    <mask id="ogTopMask">
+      <rect x="0" y="0" width="200" height="82" fill="white"/>
+      <circle cx="100" cy="100" r="46" fill="black"/>
+    </mask>
+    <mask id="ogBotMask">
+      <rect x="35" y="136" width="130" height="64" fill="white"/>
+      <circle cx="100" cy="100" r="46" fill="black"/>
+    </mask>
+    <clipPath id="ogTopClip">
+      <rect x="0" y="0" width="200" height="82"/>
+    </clipPath>
+    <clipPath id="ogBotClip">
+      <rect x="35" y="136" width="130" height="64"/>
+    </clipPath>
+  </defs>
+  <rect width="1200" height="1200" fill="#141418"/>
+  <g transform="translate(0, 285)">
+    <rect width="1200" height="630" fill="#b3afa6"/>
+    <rect x="28" y="28" width="1144" height="574" fill="#c9c5bc" stroke="#141418" stroke-width="6"/>
+    
+    <!-- Top Header Bar -->
+    <rect x="28" y="28" width="1144" height="104" fill="#141418"/>
+    <!-- Official Razin Split-Gear Logo inside Header -->
+    <g transform="translate(52, 42) scale(0.38)">
+      <rect x="3" y="3" width="194" height="194" rx="28" fill="#f7f7f5" stroke="#22252c" stroke-width="5"/>
+      <g clip-path="url(#ogTopClip)">
+        <path d="M 78.99 35.33 L 87.61 33.14 L 89.22 14.68 L 110.78 14.68 L 112.39 33.14 L 121.01 35.33 L 129.27 38.62 L 141.43 24.64 L 158.87 37.31 L 149.33 53.19 L 155.01 60.03 L 159.76 67.55 L 177.82 63.38 L 184.48 83.89 L 167.42 91.12 L 168.00 100.00 L 167.42 108.88 L 184.48 116.11 L 177.82 136.62 L 159.76 132.45 L 155.01 139.97 L 149.33 146.81 L 158.87 162.69 L 141.43 175.36 L 129.27 161.38 L 121.01 164.67 L 112.39 166.86 L 110.78 185.32 L 89.22 185.32 L 87.61 166.86 L 78.99 164.67 L 70.73 161.38 L 58.57 175.36 L 41.13 162.69 L 50.67 146.81 L 44.99 139.97 L 40.24 132.45 L 22.18 136.62 L 15.52 116.11 L 32.58 108.88 L 32.00 100.00 L 32.58 91.12 L 15.52 83.89 L 22.18 63.38 L 40.24 67.55 L 44.99 60.03 L 50.67 53.19 L 41.13 37.31 L 58.57 24.64 L 70.73 38.62 Z" fill="url(#ogGearTop)" stroke="#232730" stroke-width="3.5" stroke-linejoin="round" mask="url(#ogTopMask)"/>
+        <circle cx="100" cy="100" r="46" fill="none" stroke="#232730" stroke-width="3.5"/>
+        <line x1="33" y1="81" x2="56" y2="81" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="144" y1="81" x2="167" y2="81" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+      <g clip-path="url(#ogBotClip)">
+        <path d="M 78.99 35.33 L 87.61 33.14 L 89.22 14.68 L 110.78 14.68 L 112.39 33.14 L 121.01 35.33 L 129.27 38.62 L 141.43 24.64 L 158.87 37.31 L 149.33 53.19 L 155.01 60.03 L 159.76 67.55 L 177.82 63.38 L 184.48 83.89 L 167.42 91.12 L 168.00 100.00 L 167.42 108.88 L 184.48 116.11 L 177.82 136.62 L 159.76 132.45 L 155.01 139.97 L 149.33 146.81 L 158.87 162.69 L 141.43 175.36 L 129.27 161.38 L 121.01 164.67 L 112.39 166.86 L 110.78 185.32 L 89.22 185.32 L 87.61 166.86 L 78.99 164.67 L 70.73 161.38 L 58.57 175.36 L 41.13 162.69 L 50.67 146.81 L 44.99 139.97 L 40.24 132.45 L 22.18 136.62 L 15.52 116.11 L 32.58 108.88 L 32.00 100.00 L 32.58 91.12 L 15.52 83.89 L 22.18 63.38 L 40.24 67.55 L 44.99 60.03 L 50.67 53.19 L 41.13 37.31 L 58.57 24.64 L 70.73 38.62 Z" fill="url(#ogGearBot)" stroke="#232730" stroke-width="3.5" stroke-linejoin="round" mask="url(#ogBotMask)"/>
+        <circle cx="100" cy="100" r="46" fill="none" stroke="#232730" stroke-width="3.5"/>
+        <line x1="42" y1="137" x2="70" y2="137" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="130" y1="137" x2="158" y2="137" stroke="#232730" stroke-width="3.5" stroke-linecap="round"/>
+      </g>
+      <text x="100" y="109" text-anchor="middle" fill="#232528" font-family="Arial Black, Impact, Helvetica, sans-serif" font-weight="900" font-size="29" textLength="168" lengthAdjust="spacingAndGlyphs">RAZIN</text>
+      <text x="100" y="127" text-anchor="middle" fill="#232528" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="12.5" letter-spacing="1.7">TOOLING SERVICES</text>
+    </g>
+    <text x="148" y="88" fill="#f2efe9" font-family="Arial Black, Impact, Helvetica, sans-serif" font-weight="900" font-size="34" letter-spacing="1.5">RAZIN TOOLING SERVICES</text>
+    <text x="1140" y="88" text-anchor="end" fill="#f05a24" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="22" letter-spacing="1">AKURDI, PUNE 411035</text>
+
+    <!-- Main Headline Left -->
+    <text x="64" y="215" fill="#141418" font-family="Arial Black, Impact, Helvetica, sans-serif" font-weight="900" font-size="56" letter-spacing="0.5">416 PRESS TOOLS</text>
+    <text x="64" y="282" fill="#141418" font-family="Arial Black, Impact, Helvetica, sans-serif" font-weight="900" font-size="56" letter-spacing="0.5">PROVED FOR OEMS</text>
+    <text x="64" y="332" fill="#2c2b29" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22">Automotive Tool Installation, 210 mm Draw Proving &amp; Manpower</text>
+
+    <!-- Orange Spec Badges -->
+    <g transform="translate(64, 364)">
+      <rect x="0" y="0" width="210" height="54" fill="#f05a24" stroke="#141418" stroke-width="3"/>
+      <text x="105" y="34" text-anchor="middle" fill="#141418" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="19">210 MM DRAW</text>
+
+      <rect x="226" y="0" width="225" height="54" fill="#b3afa6" stroke="#141418" stroke-width="3"/>
+      <text x="338" y="34" text-anchor="middle" fill="#141418" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="19">DP-790 (3.7 MM)</text>
+
+      <rect x="467" y="0" width="215" height="54" fill="#b3afa6" stroke="#141418" stroke-width="3"/>
+      <text x="574" y="34" text-anchor="middle" fill="#141418" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="19">5 TO 20 YRS EXP</text>
+    </g>
+
+    <!-- OEM Clients Box Right -->
+    <g transform="translate(776, 162)">
+      <rect x="0" y="0" width="364" height="260" fill="#b3afa6" stroke="#141418" stroke-width="4"/>
+      <rect x="0" y="0" width="364" height="46" fill="#141418"/>
+      <text x="182" y="30" text-anchor="middle" fill="#f2efe9" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="16" letter-spacing="1">COMMISSIONED OEM PLANTS</text>
+      
+      <text x="22" y="82" fill="#141418" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18.5">• TATA MOTORS (Nexon X104)</text>
+      <text x="22" y="118" fill="#141418" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18.5">• GESTAMP (MQB-Kushaq)</text>
+      <text x="22" y="154" fill="#141418" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18.5">• PANSE GROUP (350 Tools)</text>
+      <text x="22" y="190" fill="#141418" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18.5">• JBM GROUP (Haridwar P113)</text>
+      <text x="22" y="226" fill="#141418" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="18.5">• THE TRUE TOOLING</text>
+    </g>
+
+    <!-- Bottom Visiting Card Bar -->
+    <rect x="28" y="468" width="1144" height="134" fill="#141418"/>
+    <text x="64" y="520" fill="#f2efe9" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="27">ASIF N SHAIKH  |  +91 99229 57006</text>
+    <text x="64" y="560" fill="#bdb9b0" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="19">shaikhasifn@rediffmail.com   •   GSTIN: 27NPAPS0212C1Z7   •   UDYAM-MH-26-0222848</text>
+    <rect x="910" y="503" width="230" height="64" fill="#f05a24"/>
+    <text x="1025" y="543" text-anchor="middle" fill="#141418" font-family="Arial Black, Helvetica, sans-serif" font-weight="900" font-size="20">VIEW DOSSIER</text>
+  </g>
+</svg>

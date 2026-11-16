@@ -1,222 +1,538 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, ShieldCheck, Wrench, Settings, Users, Factory, Award } from "lucide-react";
+import { Phone, Mail, MapPin, CheckCircle2, Wrench, Settings, Users } from "lucide-react";
+
+const oemPartners = [
+  {
+    name: "Tata Motors Ltd",
+    logo: "/logos/tata-motors.svg",
+    width: 185,
+    height: 40,
+    program: "Project X104 (Tata Nexon)",
+    location: "Pune, Maharashtra",
+    volume: "33 tools (10 parts)",
+    spec: "210 mm critical deep-draw proving without splits or wrinkles on passenger body panels.",
+  },
+  {
+    name: "Gestamp (GE Stamp Ltd)",
+    logo: "/logos/gestamp.svg",
+    width: 175,
+    height: 40,
+    program: "Project MQB-Kushaq",
+    location: "Chakan, Pune",
+    volume: "33 tool sets (6 parts)",
+    spec: "High-tensile DP-790 steel die proving up to 3.7 mm gauge with springback compensation.",
+  },
+  {
+    name: "Panse Group (Panse Autocomp)",
+    logo: "/logos/panse-group.svg",
+    width: 190,
+    height: 40,
+    program: "Tata Sierra Program",
+    location: "Sanand, Gujarat",
+    volume: "350 tools buyoff",
+    spec: "Static and dynamic tool buyoff, press installation, and proving for wheel arch inner, outer, and cross members.",
+  },
+  {
+    name: "The True Tooling",
+    logo: "/logos/the-true-tooling.svg",
+    width: 200,
+    height: 40,
+    program: "Project P113",
+    location: "JBM Facility, Haridwar",
+    volume: "6 major panel lines",
+    spec: "Complete press installation for floor front inner, rear cab cross member, grill mounting, and fender extensions.",
+  },
+  {
+    name: "JBM Group",
+    logo: "/logos/jbm-group.svg",
+    width: 175,
+    height: 40,
+    program: "Project P113 Press Line",
+    location: "SIDCUL, Haridwar",
+    volume: "6 assembly tool sets",
+    spec: "On-site rigging, bed alignment, load balancing, and trial validation on JBM Haridwar stamping lines.",
+  },
+  {
+    name: "Škoda / VW MQB Platform",
+    logo: "/logos/skoda-vw.svg",
+    width: 195,
+    height: 40,
+    program: "MQB-A0-IN Kushaq",
+    location: "Chakan Cluster, Pune",
+    volume: "33 progressive & draw dies",
+    spec: "Dimensional metrology clearance and production batch run sign-off for high-strength structural stampings.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-slate-900 border-b border-slate-800 text-white py-24 sm:py-32 overflow-hidden bg-industrial-grid">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/40 z-10"></div>
-        <div className="container relative z-20 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-start max-w-5xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
-            <ShieldCheck size={16} />
-            <span>Premium Tooling & Manpower Solutions in India</span>
+    <div className="flex flex-col">
+      {/* Stage Hero */}
+      <section className="py-12 lg:py-20 border-b-[3px] border-ink">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-5 space-y-6">
+              <h1>416 press tools proved for OEMs</h1>
+              <p className="lead text-ink-2">
+                Tool installation, 210&nbsp;mm draw proving, and 20-year toolmakers from Pune.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link href="/projects" className="btn btn--primary">
+                  Inspect OEM Ledger
+                </Link>
+                <Link href="/contact" className="btn btn--secondary">
+                  Send Tooling RFQ
+                </Link>
+              </div>
+              <dl className="grid grid-cols-3 gap-4 pt-6 border-t-2 border-ink">
+                <div>
+                  <dt className="text-sm text-ink-2">Max draw proved</dt>
+                  <dd className="figure-num text-2xl font-bold text-ink mt-1">210&nbsp;mm</dd>
+                </div>
+                <div className="border-l border-rule pl-4">
+                  <dt className="text-sm text-ink-2">High-tensile gauge</dt>
+                  <dd className="figure-num text-2xl font-bold text-ink mt-1">DP-790</dd>
+                </div>
+                <div className="border-l border-rule pl-4">
+                  <dt className="text-sm text-ink-2">Crew experience</dt>
+                  <dd className="figure-num text-2xl font-bold text-ink mt-1">5 to 20 yrs</dd>
+                </div>
+              </dl>
+            </div>
+
+            {/* Signature: OEM Commissioning & Logo Plate + Toolroom Slot */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="plate space-y-6">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b-2 border-ink">
+                  <h2 className="text-2xl">Commissioned OEM &amp; Tier-1 Plants</h2>
+                  <span className="text-sm text-ink-2 figure-num">
+                    UDYAM-MH-26-0222848
+                  </span>
+                </div>
+
+                {/* 3 + 3 Monochrome Logo Grid (craft.md § 9) */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {oemPartners.map((partner) => (
+                    <div
+                      key={partner.name}
+                      className="bg-paper-2 border-2 border-ink p-3 flex items-center justify-center min-h-[68px]"
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={partner.width}
+                        height={partner.height}
+                        className="max-h-10 w-auto object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch pt-2">
+                  <figure
+                    className="md:col-span-7 photo-frame w-full min-w-0 h-[220px]"
+                    data-slot="hero"
+                    data-alt="Heavy automotive sheet-metal stamping die and car body panel press at Razin Tooling Services"
+                  >
+                    <img
+                      src="/images/library/toolroom-lathe-centres.jpg"
+                      width={1920}
+                      height={1065}
+                      alt="Heavy automotive press tool and car body panel stamping die inside an OEM stamping press"
+                      style={{ objectPosition: "50% 50%" }}
+                      fetchPriority="high"
+                    />
+                  </figure>
+                  <div className="md:col-span-5 min-w-0 bg-ink text-plate-ink p-5 flex flex-col justify-center space-y-2.5 border-2 border-ink relative z-10">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="/logo.svg"
+                        alt=""
+                        width={44}
+                        height={44}
+                        className="h-11 w-11 flex-shrink-0"
+                      />
+                      <p className="font-display font-bold text-lg uppercase text-plate-ink">
+                        Asif N Shaikh
+                      </p>
+                    </div>
+                    <p className="text-sm text-paper">
+                      Proprietor &amp; Lead Tooling Specialist, Akurdi, Pune 411035
+                    </p>
+                    <p className="text-sm figure-num text-plate-ink font-bold">
+                      <a href="tel:+919922957006" className="no-underline hover:underline">
+                        +91 99229 57006
+                      </a>
+                    </p>
+                    <p className="text-xs figure-num text-paper">
+                      GSTIN: 27NPAPS0212C1Z7
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-            Precision Engineering. <br />
-            <span className="text-blue-500">Unmatched Expertise.</span>
-          </h1>
-          <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">
-            Razin Tooling Services provides industry-leading tool installation, critical die proving, modifying services, and highly skilled industrial manpower for India's largest OEMs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <Link
-              href="/services"
-              className="inline-flex justify-center items-center gap-2 px-8 py-3.5 border border-transparent text-base font-bold rounded-md text-white bg-blue-600 hover:bg-blue-700 transition shadow-lg shadow-blue-600/20"
-            >
-              Explore Services
-              <ArrowRight size={18} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex justify-center items-center gap-2 px-8 py-3.5 border border-slate-700 text-base font-bold rounded-md text-white bg-slate-800 hover:bg-slate-700 transition"
-            >
-              Request a Consultation
+        </div>
+      </section>
+
+      {/* Section 2: OEM Commissioning Ledger (Table composition) */}
+      <section className="py-20 lg:py-28">
+        <div className="container space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+            <div className="lg:col-span-7">
+              <h2>Verified OEM commissioning record</h2>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="lead text-ink-2">
+                Every tool count, draw depth, and material grade below comes directly from our signed plant buyoffs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            tabIndex={0}
+            role="region"
+            aria-labelledby="oem-ledger-caption"
+            className="table-wrapper"
+          >
+            <table className="ledger-table">
+              <caption id="oem-ledger-caption">
+                Completed press tool installation, buyoff, and die proving contracts across India
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Client &amp; OEM</th>
+                  <th scope="col">Vehicle &amp; Project</th>
+                  <th scope="col">Plant &amp; Location</th>
+                  <th scope="col">Tool Volume</th>
+                  <th scope="col">Critical Spec &amp; Proving</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <div className="flex flex-col gap-2">
+                      <img
+                        src="/logos/tata-motors.svg"
+                        alt="Tata Motors Ltd"
+                        width={150}
+                        height={32}
+                        loading="lazy"
+                        className="h-8 w-auto object-contain"
+                      />
+                      <span>Tata Motors Ltd</span>
+                    </div>
+                  </th>
+                  <td className="font-medium text-ink">Project X104 (Tata Nexon)</td>
+                  <td className="text-ink-2">Pune, Maharashtra</td>
+                  <td className="figure-num font-bold text-ink">33 tools (10 parts)</td>
+                  <td className="text-ink-2">
+                    Proved critical draws up to 210&nbsp;mm depth with zero tearing or wrinkling on outer and inner panels.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="flex flex-col gap-2">
+                      <img
+                        src="/logos/gestamp.svg"
+                        alt="Gestamp (GE Stamp Ltd)"
+                        width={145}
+                        height={32}
+                        loading="lazy"
+                        className="h-8 w-auto object-contain"
+                      />
+                      <span>GE Stamp Ltd (Gestamp)</span>
+                    </div>
+                  </th>
+                  <td className="font-medium text-ink">Project MQB-Kushaq (Škoda / VW)</td>
+                  <td className="text-ink-2">Chakan, Pune</td>
+                  <td className="figure-num font-bold text-ink">33 tool sets (6 parts)</td>
+                  <td className="text-ink-2">
+                    Cleared high-tensile DP-790 steel stampings up to 3.7&nbsp;mm thickness with full springback control.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="flex flex-col gap-2">
+                      <img
+                        src="/logos/panse-group.svg"
+                        alt="Panse Group of Companies"
+                        width={155}
+                        height={32}
+                        loading="lazy"
+                        className="h-8 w-auto object-contain"
+                      />
+                      <span>Panse Group of Companies</span>
+                    </div>
+                  </th>
+                  <td className="font-medium text-ink">Tata Sierra Project</td>
+                  <td className="text-ink-2">Panse Autocomp, Sanand, Gujarat</td>
+                  <td className="figure-num font-bold text-ink">350 tools buyoff</td>
+                  <td className="text-ink-2">
+                    Executed static and dynamic checking, press installation, and proving for wheel arch inner, outer, and cross members.
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <div className="flex flex-col gap-2">
+                      <img
+                        src="/logos/the-true-tooling.svg"
+                        alt="The True Tooling"
+                        width={160}
+                        height={32}
+                        loading="lazy"
+                        className="h-8 w-auto object-contain"
+                      />
+                      <span>The True Tooling (at JBM Group)</span>
+                    </div>
+                  </th>
+                  <td className="font-medium text-ink">Project P113</td>
+                  <td className="text-ink-2">JBM Facility, Haridwar</td>
+                  <td className="figure-num font-bold text-ink">6 major panel lines</td>
+                  <td className="text-ink-2">
+                    Installed tools for floor front inner (RH &amp; rear), rear cab cross member, grill mounting, front upper cross member, and fender extensions (LH/RH).
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
+            <p className="text-sm text-ink-2">
+              Need references or signed completion reports for vendor registration?
+            </p>
+            <Link href="/projects" className="btn btn--secondary">
+              Read Full Case Studies
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Trust Badges Bar */}
-      <section className="bg-slate-800 py-8 border-b border-slate-700">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-slate-700">
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-3xl font-bold text-white mb-2">5-20</span>
-              <span className="text-slate-400 text-sm uppercase tracking-wider">Years Experience</span>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-3xl font-bold text-white mb-2">100+</span>
-              <span className="text-slate-400 text-sm uppercase tracking-wider">Tools Commissioned</span>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-3xl font-bold text-white mb-2">Tier-1</span>
-              <span className="text-slate-400 text-sm uppercase tracking-wider">OEM Partners</span>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <span className="text-3xl font-bold text-white mb-2">24/7</span>
-              <span className="text-slate-400 text-sm uppercase tracking-wider">Support</span>
+      {/* Section 3: Cast Figure Plate (Formwork Range composition) */}
+      <section className="band--cast py-20 lg:py-24">
+        <div className="container">
+          <div className="plate">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-5 border-b-2 lg:border-b-0 lg:border-r-2 border-ink pb-6 lg:pb-0 lg:pr-8">
+                <p className="display-num text-7xl sm:text-8xl lg:text-9xl text-ink">
+                  350
+                </p>
+                <p className="text-lg font-bold text-ink mt-2">
+                  Press tools signed off in a single OEM program
+                </p>
+              </div>
+              <div className="lg:col-span-7 space-y-4">
+                <h2>From static buyoff to 100-part batch clearance</h2>
+                <p className="text-ink-2 leading-relaxed">
+                  For the Tata Sierra program with Panse Group in Sanand, Gujarat, our engineers completed static checking, dynamic press trials, and shop-floor installation across 350 tools, proving critical wheel-arch and cross-member stampings on schedule.
+                </p>
+                <div className="flex flex-wrap gap-6 pt-2 text-sm font-medium text-ink">
+                  <span>Zero-defect blue-matching</span>
+                  <span>Blank-holder force tuning</span>
+                  <span>On-site ECN welding &amp; spotting</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Overview */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Core Industrial Services</h2>
-            <p className="text-lg text-slate-600">Comprehensive tooling and manpower solutions tailored for the demanding automotive and sheet metal manufacturing sectors.</p>
+      {/* Section 4: Bento Capability Grid (Bento composition: 7+5 over 5+7) */}
+      <section className="py-20 lg:py-28">
+        <div className="container space-y-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
+            <div className="lg:col-span-7">
+              <h2>Four ways we clear press-shop bottlenecks</h2>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="lead text-ink-2">
+                Deploy our team for turnkey tool commissioning or augment your shift with seasoned toolmakers.
+              </p>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Service 1 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-blue-500/30 transition-all group">
-              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <Wrench size={28} />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Lead Bento Tile (7 cols) */}
+            <div className="lg:col-span-7 plate flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-4 border-b-2 border-ink pb-4">
+                  <h3>Critical Die Proving &amp; DP-790 Spotting</h3>
+                  <Settings size={24} className="flex-shrink-0 text-ink" aria-hidden="true" />
+                </div>
+                <p className="text-ink-2 leading-relaxed">
+                  We prove deep draws up to 210&nbsp;mm and high-tensile DP-790 structural dies up to 3.7&nbsp;mm thick. Our die specialists adjust draw beads, binder pressures, and die faces to eliminate splitting, wrinkling, and springback.
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Tool Installation & Commissioning</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Expert installation and rigorous commissioning of large-scale press tools to ensure zero-defect production readiness.
-              </p>
-              <Link href="/services/tool-installation-india" className="text-blue-600 font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                Learn more <ArrowRight size={16} />
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-rule">
+                <span className="figure-num text-sm font-bold text-ink">
+                  Class-A outer panels &amp; AHSS structural members
+                </span>
+                <Link href="/services/die-proving-india" className="btn btn--secondary">
+                  Inspect Die Proving
+                </Link>
+              </div>
+            </div>
+
+            {/* Tile 2 (5 cols with photograph slot) */}
+            <div className="lg:col-span-5 well flex flex-col justify-between space-y-6 border-2 border-ink">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-4">
+                  <h3>Heavy Tool Installation</h3>
+                  <Wrench size={24} className="flex-shrink-0 text-ink" aria-hidden="true" />
+                </div>
+                <figure
+                  className="photo-frame w-full min-w-0 h-[200px]"
+                  data-slot="bento-install"
+                  data-alt="Automotive tandem press line with multi-ton car body draw dies during installation"
+                >
+                  <img
+                    src="/images/library/toolroom-grinding-wheels.jpg"
+                    width={1920}
+                    height={1266}
+                    loading="lazy"
+                    alt="Multi-ton automotive sheet-metal stamping press line and car body draw dies"
+                  />
+                </figure>
+                <p className="text-sm text-ink-2 leading-relaxed">
+                  Rigging, press-bed alignment, tonnage balancing, and dynamic trial runs for tandem and transfer press lines across India.
+                </p>
+              </div>
+              <Link href="/services/tool-installation-india" className="btn btn--secondary w-full">
+                Inspect Tool Installation
               </Link>
             </div>
 
-            {/* Service 2 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-blue-500/30 transition-all group">
-              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <Settings size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Critical Die Proving</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Specialized in proving highly critical draws (up to 210mm depth) and processing high-tensile materials like DP-790.
-              </p>
-              <Link href="/services/die-proving-india" className="text-blue-600 font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                Learn more <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            {/* Service 3 */}
-            <div className="bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-xl hover:border-blue-500/30 transition-all group">
-              <div className="w-14 h-14 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <Users size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Skilled Industrial Manpower</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Supply of highly trained professionals with 5-20 years of hands-on experience in press tool operations.
-              </p>
-              <Link href="/services/industrial-skilled-manpower" className="text-blue-600 font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                Learn more <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="/services" className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 font-bold transition-colors">
-              View all services <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Highlight */}
-      <section className="py-20 bg-slate-900 text-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Proven Track Record</h2>
-              <p className="text-lg text-slate-400">Successfully delivered critical automotive projects with uncompromising quality.</p>
-            </div>
-            <Link href="/projects" className="hidden md:inline-flex items-center gap-2 px-6 py-3 border border-slate-700 rounded-md text-white hover:bg-slate-800 transition">
-              See All Case Studies
-            </Link>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-slate-800 p-8 rounded-xl border border-slate-700 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
-                <Factory size={120} />
-              </div>
-              <div className="relative z-10">
-                <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider rounded mb-4">Tata Motors Ltd</span>
-                <h3 className="text-2xl font-bold mb-3">Project X104 (Nexon)</h3>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={20} className="text-green-400 flex-shrink-0" />
-                    <span className="text-slate-300">Commissioned 10 parts comprising 33 total tools.</span>
+            {/* Tile 3 (5 cols) */}
+            <div className="lg:col-span-5 well flex flex-col justify-between space-y-6 border-2 border-ink">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between gap-4 border-b border-ink pb-3">
+                  <h3>Skilled Toolroom Manpower</h3>
+                  <Users size={24} className="flex-shrink-0 text-ink" aria-hidden="true" />
+                </div>
+                <p className="text-ink-2 leading-relaxed">
+                  Supply of vetted toolroom engineers, die provers, press setters, and maintenance technicians with 5 to 20 years of hands-on OEM floor experience.
+                </p>
+                <ul className="space-y-2 text-sm text-ink list-none p-0 m-0">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="flex-shrink-0 text-ink" aria-hidden="true" />
+                    <span>Senior Die Proving Specialists</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={20} className="text-green-400 flex-shrink-0" />
-                    <span className="text-slate-300">Successfully executed critical draw proving up to 210mm depth.</span>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 size={16} className="flex-shrink-0 text-ink" aria-hidden="true" />
+                    <span>Press Tool Setters &amp; ECN Fitters</span>
                   </li>
                 </ul>
               </div>
+              <Link href="/services/industrial-skilled-manpower" className="btn btn--secondary w-full">
+                Request Manpower Roster
+              </Link>
             </div>
 
-            <div className="bg-slate-800 p-8 rounded-xl border border-slate-700 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
-                <Factory size={120} />
+            {/* Tile 4 (7 cols) */}
+            <div className="lg:col-span-7 band--ink p-8 border-[3px] border-ink flex flex-col justify-between space-y-6">
+              <div className="space-y-4">
+                <h3>In-Press ECN Modifications &amp; Full Service Scope</h3>
+                <p className="text-paper leading-relaxed">
+                  When Engineering Change Notices (ECNs) or chronic stamping defects hit during a launch, pulling a multi-ton die off the bolster costs days. We execute precision in-press welding, spotting, and trim-line modifications right on your press bed in Pune, Chakan, Sanand, Haridwar, Chennai, and Gurugram.
+                </p>
               </div>
-              <div className="relative z-10">
-                <span className="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider rounded mb-4">GE Stamp Ltd</span>
-                <h3 className="text-2xl font-bold mb-3">Project MQB-Kushaq</h3>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={20} className="text-green-400 flex-shrink-0" />
-                    <span className="text-slate-300">Proved 6 parts spanning 33 complex tools.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 size={20} className="text-green-400 flex-shrink-0" />
-                    <span className="text-slate-300">Expert handling of High Tensile DP-790 material up to 3.7mm thickness.</span>
-                  </li>
-                </ul>
+              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-muted">
+                <span className="text-sm text-paper">
+                  48-hour diagnostic dispatch across major auto clusters
+                </span>
+                <Link href="/services" className="btn btn--secondary">
+                  Browse All 9 Services
+                </Link>
               </div>
             </div>
-          </div>
-          <div className="mt-8 text-center md:hidden">
-            <Link href="/projects" className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 rounded-md text-white w-full justify-center bg-slate-800 hover:bg-slate-700 transition">
-              See All Case Studies
-            </Link>
           </div>
         </div>
       </section>
 
-      {/* Embedded Map & CTA */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Headquartered in Pune's Industrial Hub</h2>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Strategically located in Akurdi, Pune, we are perfectly positioned to serve the automotive and manufacturing ecosystems across Maharashtra and Pan-India.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3">
-                  <Award className="text-blue-600" size={24} />
-                  <span className="text-slate-700 font-medium">UDYAM Registered Enterprise</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Award className="text-blue-600" size={24} />
-                  <span className="text-slate-700 font-medium">GST Compliant Operations</span>
-                </li>
-              </ul>
-              <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-white bg-blue-600 hover:bg-blue-700 transition">
-                Contact Our Experts
-              </Link>
+      {/* Section 5: Shareable Digital Visiting Card & Pune HQ Dispatch (Hire Close) */}
+      <section className="band--cast py-20 lg:py-28">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+            {/* Digital Visiting Card Plate */}
+            <div className="lg:col-span-6 plate flex flex-col justify-between space-y-8">
+              <div className="space-y-4">
+                <div className="border-b-2 border-ink pb-4 flex flex-wrap justify-between items-baseline gap-2">
+                  <h2>Direct Visiting Card &amp; RFQ</h2>
+                  <span className="text-sm font-bold text-ink">Akurdi, Pune HQ</span>
+                </div>
+                <p className="text-ink-2 leading-relaxed">
+                  Bookmark or forward this page to your procurement and toolroom heads. Call or message Asif N Shaikh directly for immediate manpower deployment, die proving quotes, or vendor registration documents.
+                </p>
+
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                  <div className="bg-paper-2 p-4 border-2 border-ink">
+                    <dt className="text-xs text-ink-2">Key Contact</dt>
+                    <dd className="font-bold text-base text-ink mt-1">Asif N Shaikh</dd>
+                  </div>
+                  <div className="bg-paper-2 p-4 border-2 border-ink">
+                    <dt className="text-xs text-ink-2">Direct Mobile &amp; WhatsApp</dt>
+                    <dd className="figure-num font-bold text-base text-ink mt-1">
+                      <a href="tel:+919922957006">+91 99229 57006</a>
+                    </dd>
+                  </div>
+                  <div className="bg-paper-2 p-4 border-2 border-ink">
+                    <dt className="text-xs text-ink-2">GST Registration</dt>
+                    <dd className="figure-num font-bold text-base text-ink mt-1">27NPAPS0212C1Z7</dd>
+                  </div>
+                  <div className="bg-paper-2 p-4 border-2 border-ink">
+                    <dt className="text-xs text-ink-2">MSME UDYAM</dt>
+                    <dd className="figure-num font-bold text-base text-ink mt-1">UDYAM-MH-26-0222848</dd>
+                  </div>
+                </dl>
+              </div>
+
+              <div className="space-y-3 pt-4 border-t-2 border-ink">
+                <div className="flex flex-wrap gap-4">
+                  <a href="tel:+919922957006" className="btn btn--secondary whitespace-nowrap">
+                    <Phone size={16} aria-hidden="true" />
+                    Call +91 99229 57006
+                  </a>
+                  <Link href="/contact" className="btn btn--secondary whitespace-nowrap">
+                    <Mail size={16} aria-hidden="true" />
+                    Send Project Scope
+                  </Link>
+                </div>
+                <p className="text-xs text-ink-2 flex items-center gap-2">
+                  <MapPin size={14} aria-hidden="true" />
+                  <span>Headquarters: Akurdi, Pimpri-Chinchwad, Pune 411035, Maharashtra</span>
+                </p>
+                <p data-credits className="text-xs text-ink-2">
+                  Photographs:{" "}
+                  <a href="https://commons.wikimedia.org/wiki/File:Haltern_am_See,_Sythen,_Quarzwerke,_Werkzeug_in_der_Werkzeughalle_--_2014_--_4059.jpg">
+                    Dietmar Rabich
+                  </a>{" "}
+                  (CC BY-SA 4.0, Wikimedia Commons),{" "}
+                  <a href="https://commons.wikimedia.org/wiki/File:Haltern_am_See,_Sythen,_Werkzeughalle_der_Quarzwerke_--_2015_--_01117.jpg">
+                    Dietmar Rabich
+                  </a>{" "}
+                  (CC BY-SA 4.0, Wikimedia Commons).
+                </p>
+              </div>
             </div>
-            <div className="h-[400px] bg-slate-200 rounded-xl overflow-hidden shadow-lg border border-slate-200">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15124.634125301886!2d73.7667232252533!3d18.647161860000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sAkurdi%2C%20Pimpri-Chinchwad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Google Maps Location of Razin Tooling Services"
-              ></iframe>
+
+            {/* Map Frame */}
+            <div className="lg:col-span-6 border-[3px] border-ink bg-paper-2 min-h-[420px] flex flex-col">
+              <div className="bg-ink text-plate-ink px-5 py-3 flex items-center justify-between text-sm">
+                <span className="font-bold">Akurdi Industrial Hub, Pune 411035</span>
+                <span className="figure-num">18.6472° N, 73.7667° E</span>
+              </div>
+              <div className="flex-grow min-h-[370px]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15124.634125301886!2d73.7667232252533!3d18.647161860000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9e76c8fa205%3A0x1b210131915734fd!2sAkurdi%2C%20Pimpri-Chinchwad%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "370px" }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Google Maps Location of Razin Tooling Services in Akurdi, Pune"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
